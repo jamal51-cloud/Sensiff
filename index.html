@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF SENSI PRO</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+<div class="logo">FF SENSI PRO</div>
+<div class="subtitle">SETTING SENSI SESUAI HP</div>
+
+<div class="card">
+
+<div class="label">Pilih HP</div>
+
+<select id="brand">
+<option>Samsung Galaxy A14</option>
+<option>Samsung Galaxy S23</option>
+<option>Xiaomi Redmi Note 12</option>
+<option>POCO X6 Pro</option>
+<option>Infinix GT 20 Pro</option>
+<option>TECNO POVA 6</option>
+<option>realme Narzo 70</option>
+<option>ROG Phone 8</option>
+<option>iPhone 15 Pro Max</option>
+<option>Advan GX</option>
+</select>
+
+<button onclick="generateSensi()">LIHAT SENSI</button>
+
+<div class="result" id="result">
+
+<h2>SENSI TERBAIK</h2>
+
+<div class="item"><span>General</span><span id="general"></span></div>
+<div class="item"><span>Red Dot</span><span id="reddot"></span></div>
+<div class="item"><span>2x Scope</span><span id="scope2x"></span></div>
+<div class="item"><span>4x Scope</span><span id="scope4x"></span></div>
+<div class="item"><span>Sniper Scope</span><span id="sniper"></span></div>
+<div class="item"><span>Free Look</span><span id="freelook"></span></div>
+<div class="item"><span>DPI</span><span id="dpi"></span></div>
+<div class="item"><span>Touch</span><span id="touch"></span></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
