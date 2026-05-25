@@ -11,6 +11,21 @@ body{
   overflow-x:hidden;
 }
 
+body::before{
+  content:'';
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle,#00ffcc22 0%,transparent 60%);
+  animation:moveBg 10s linear infinite;
+}
+
+@keyframes moveBg{
+  0%{transform:translate(-20%,-20%);}
+  50%{transform:translate(-10%,-30%);}
+  100%{transform:translate(-20%,-20%);}
+}
+
 .container{
   position:relative;
   z-index:2;
@@ -100,4 +115,29 @@ button{
   margin-top:30px;
   color:#666;
   font-size:12px;
+}
+
+.glow{
+  position:fixed;
+  width:180px;
+  height:180px;
+  background:#00ffd522;
+  filter:blur(80px);
+  border-radius:50%;
+  animation:float 8s infinite alternate;
+}
+
+.glow:nth-child(1){
+  top:10%;
+  left:-50px;
+}
+
+.glow:nth-child(2){
+  bottom:10%;
+  right:-50px;
+}
+
+@keyframes float{
+  from{transform:translateY(0px);}
+  to{transform:translateY(40px);}
 }
