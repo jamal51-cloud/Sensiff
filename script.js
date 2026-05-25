@@ -1,66 +1,133 @@
-function random(min,max){
-  return Math.floor(Math.random()*(max-min+1))+min;
-}
+const sensiData = {
+  "Samsung Galaxy A14": {
+    general: 185,
+    redDot: 195,
+    scope2x: 175,
+    scope4x: 160,
+    sniper: 120,
+    freeLook: 90,
+    dpi: 620,
+    touch: 'Smooth'
+  },
+
+  "Samsung Galaxy S23": {
+    general: 200,
+    redDot: 200,
+    scope2x: 190,
+    scope4x: 180,
+    sniper: 145,
+    freeLook: 110,
+    dpi: 780,
+    touch: 'Ultra Smooth'
+  },
+
+  "Xiaomi Redmi Note 12": {
+    general: 190,
+    redDot: 198,
+    scope2x: 182,
+    scope4x: 165,
+    sniper: 130,
+    freeLook: 95,
+    dpi: 700,
+    touch: 'Drag HS'
+  },
+
+  "POCO X6 Pro": {
+    general: 200,
+    redDot: 200,
+    scope2x: 195,
+    scope4x: 185,
+    sniper: 150,
+    freeLook: 120,
+    dpi: 820,
+    touch: 'iPhone Feel'
+  },
+
+  "Infinix GT 20 Pro": {
+    general: 198,
+    redDot: 200,
+    scope2x: 188,
+    scope4x: 175,
+    sniper: 145,
+    freeLook: 110,
+    dpi: 760,
+    touch: 'Fast Drag'
+  },
+
+  "TECNO POVA 6": {
+    general: 192,
+    redDot: 199,
+    scope2x: 180,
+    scope4x: 168,
+    sniper: 135,
+    freeLook: 100,
+    dpi: 720,
+    touch: 'Smooth Aim'
+  },
+
+  "realme Narzo 70": {
+    general: 194,
+    redDot: 200,
+    scope2x: 184,
+    scope4x: 170,
+    sniper: 140,
+    freeLook: 102,
+    dpi: 735,
+    touch: 'Auto Headshot'
+  },
+
+  "ROG Phone 8": {
+    general: 200,
+    redDot: 200,
+    scope2x: 200,
+    scope4x: 190,
+    sniper: 160,
+    freeLook: 130,
+    dpi: 900,
+    touch: 'Extreme Smooth'
+  },
+
+  "iPhone 15 Pro Max": {
+    general: 200,
+    redDot: 200,
+    scope2x: 198,
+    scope4x: 188,
+    sniper: 155,
+    freeLook: 120,
+    dpi: 850,
+    touch: 'Ultra iPhone'
+  },
+
+  "Advan GX": {
+    general: 180,
+    redDot: 192,
+    scope2x: 170,
+    scope4x: 155,
+    sniper: 118,
+    freeLook: 88,
+    dpi: 600,
+    touch: 'Stabil'
+  }
+};
 
 function generateSensi(){
 
-let ram=document.getElementById('ram').value;
-let fps=document.getElementById('fps').value;
+const hp = document.getElementById('brand').value;
+const data = sensiData[hp];
 
-let general=100;
-let redDot=90;
-let scope2x=80;
-let scope4x=70;
-let sniper=60;
-let freeLook=50;
-let dpi=600;
-let touch='Smooth';
-
-if(ram==='2 GB'){
-  general=random(70,85);
-  dpi=random(450,520);
-  touch='Stabil';
+if(!data){
+  alert('HP belum tersedia');
+  return;
 }
 
-if(ram==='4 GB'){
-  general=random(85,95);
-  dpi=random(520,650);
-  touch='Licin';
-}
+document.getElementById('general').innerText = data.general;
+document.getElementById('reddot').innerText = data.redDot;
+document.getElementById('scope2x').innerText = data.scope2x;
+document.getElementById('scope4x').innerText = data.scope4x;
+document.getElementById('sniper').innerText = data.sniper;
+document.getElementById('freelook').innerText = data.freeLook;
+document.getElementById('dpi').innerText = data.dpi;
+document.getElementById('touch').innerText = data.touch;
 
-if(ram==='6 GB'){
-  general=random(95,100);
-  dpi=random(650,720);
-  touch='Super Smooth';
-}
-
-if(ram==='8 GB' || ram==='12 GB' || ram==='16 GB'){
-  general=100;
-  dpi=random(700,850);
-  touch='iPhone Feel';
-}
-
-if(fps==='120 FPS'){
-  redDot=100;
-  scope2x=95;
-}
-
-if(fps==='90 FPS'){
-  redDot=95;
-}
-
-scope4x=random(60,85);
-freeLook=random(50,75);
-sniper=random(45,70);
-
-document.getElementById('general').innerText=general;
-document.getElementById('reddot').innerText=redDot;
-document.getElementById('scope2x').innerText=scope2x;
-document.getElementById('scope4x').innerText=scope4x;
-document.getElementById('sniper').innerText=sniper;
-document.getElementById('freelook').innerText=freeLook;
-document.getElementById('dpi').innerText=dpi;
-document.getElementById('touch').innerText=touch;
-
-document.getElementById('result').style.display='block';
+document.getElementById('result').style.display = 'block';
 }
